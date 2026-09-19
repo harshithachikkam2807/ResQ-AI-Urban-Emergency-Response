@@ -1,0 +1,710 @@
+[
+  {
+    "id": "INC-2026-101",
+    "title": "Expressway Multi-Vehicle Pile-up with Entrapped Passengers",
+    "category": "Road accident",
+    "severity": "Critical",
+    "status": "In Progress",
+    "timestamp": "2026-09-08T08:15:30Z",
+    "location": {
+      "address": "Kilometer Marker 14.2, North Outer Ring Expressway",
+      "district": "Northern Corridor",
+      "zone": "Sector 4",
+      "latitude": 37.7833,
+      "longitude": -122.4167,
+      "landmark": "Near Exit 28 Overpass"
+    },
+    "description": "Heavy fog contributed to a high-speed chain reaction collision involving an articulated freight truck, two commuter passenger cars, and an airport shuttle van. Heavy cabin intrusion observed on the passenger car with at least two individuals mechanically pinned. Fuel tank on freight carrier has breached, spilling approximately 200 liters of diesel across eastbound lanes.",
+    "reporter": {
+      "source": "CCTV AI Highway Surveillance (Cam-NR44)",
+      "contact": "TOC-Automated-Alert-System"
+    },
+    "impact": {
+      "casualties": 0,
+      "injuries": 6,
+      "trappedIndividuals": 2,
+      "evacuationCount": 14,
+      "propertyDamageEstimate": "Severe"
+    },
+    "assignedUnits": [
+      {
+        "unitId": "RESCUE-03",
+        "type": "Heavy Technical Rescue Squad (Jaws of Life)",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "ENG-07",
+        "type": "Fire Pumper Engine (Foam Capability)",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "MEDIC-14",
+        "type": "Advanced Life Support (ALS) Ambulance",
+        "status": "Transporting",
+        "etaMinutes": 8
+      },
+      {
+        "unitId": "MEDIC-22",
+        "type": "Advanced Life Support (ALS) Ambulance",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "PATROL-88",
+        "type": "Highway Traffic Interceptor",
+        "status": "On Scene",
+        "etaMinutes": 0
+      }
+    ],
+    "actionPlan": [
+      "Establish 150-meter upstream safety perimeter with truck-mounted attenuators.",
+      "Lay 3% AFFF foam blanket across diesel fuel spillage to prevent vapor ignition.",
+      "Deploy hydraulic spreaders and cutters to execute dash roll and remove B-pillar on pinned vehicle.",
+      "Apply START triage to classify casualties for priority Level-1 Trauma Center routing.",
+      "Reroute incoming expressway traffic onto arterial Bypass 9."
+    ],
+    "requiredResources": [
+      "Hydraulic Extrication Tools",
+      "Class B Foam Concentrate",
+      "Absorbent Granules",
+      "Spine Boards & Cervical Collars",
+      "Heavy Tow Recovery Crane"
+    ],
+    "relatedKnowledgeDoc": "knowledge-base/accident-demo.txt"
+  },
+  {
+    "id": "INC-2026-102",
+    "title": "Commercial High-Rise 14th Floor Electrical Fire",
+    "category": "Fire",
+    "severity": "Critical",
+    "status": "Active",
+    "timestamp": "2026-09-08T11:42:15Z",
+    "location": {
+      "address": "742 Financial Boulevard, Vertex Tower",
+      "district": "Downtown Commercial District",
+      "zone": "Central Core",
+      "latitude": 37.7891,
+      "longitude": -122.4014,
+      "landmark": "Opposite Central Metro Station"
+    },
+    "description": "Electrical short circuit in server equipment room on the 14th floor has triggered rapid structural fire spread through false ceilings into adjoining corporate offices. Dense black acrid smoke entering central stairwells. Automatic fire sprinklers activated on floor 14 but municipal water pressure shows moderate drop. Approximately 60 building occupants still evacuating via eastern emergency stairwell.",
+    "reporter": {
+      "source": "Building Management SCADA & 911 Call",
+      "contact": "Building Safety Officer D. Vance"
+    },
+    "impact": {
+      "casualties": 0,
+      "injuries": 4,
+      "trappedIndividuals": 8,
+      "evacuationCount": 240,
+      "propertyDamageEstimate": "Critical"
+    },
+    "assignedUnits": [
+      {
+        "unitId": "ENG-01",
+        "type": "High-Pressure Pumper Engine",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "ENG-04",
+        "type": "Standard Pumper Engine",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "LADDER-02",
+        "type": "70m Bronto Skylift Hydraulic Aerial Platform",
+        "status": "En Route",
+        "etaMinutes": 3
+      },
+      {
+        "unitId": "AIR-01",
+        "type": "Mobile Breathing Apparatus Compressor Van",
+        "status": "En Route",
+        "etaMinutes": 5
+      },
+      {
+        "unitId": "MEDIC-05",
+        "type": "Advanced Life Support (ALS) Ambulance",
+        "status": "On Scene",
+        "etaMinutes": 0
+      }
+    ],
+    "actionPlan": [
+      "Engage Phase I elevator recall to ground floor; lock elevator shafts.",
+      "Establish Forward Staging Area on 12th floor (two floors below fire floor).",
+      "Connect Siamese twin couplings to external dry riser standpipe manifold.",
+      "Activate stairwell positive-pressure pressurization blowers to clear evacuation routes.",
+      "Dispatch Search & Rescue Team Alpha to sweep 14th floor conference rooms with FLIR cameras."
+    ],
+    "requiredResources": [
+      "High-Rise Hose Packs",
+      "Thermal Imaging Cameras",
+      "Positive Pressure Ventilation Fans",
+      "Extra SCBA Cylinders",
+      "Smoke Inhalation Antidote Kits (Cyanokit)"
+    ],
+    "relatedKnowledgeDoc": "knowledge-base/fire-demo.txt"
+  },
+  {
+    "id": "INC-2026-103",
+    "title": "Subterranean Highway Underpass Flash Inundation",
+    "category": "Flood",
+    "severity": "High",
+    "status": "In Progress",
+    "timestamp": "2026-09-08T13:05:00Z",
+    "location": {
+      "address": "Grand Central Underpass, Junction 5",
+      "district": "Midtown Transit Corridor",
+      "zone": "Sector 2",
+      "latitude": 37.7712,
+      "longitude": -122.4285,
+      "landmark": "Beneath Central Rail Viaduct"
+    },
+    "description": "Sudden cloudburst (72 mm/hr) has overwhelmed local stormwater gravity outfall drains. Underpass water level surged rapidly to 85 cm within 18 minutes. Two passenger vehicles and one transit mini-bus are partially submerged with water reaching window level. 7 passengers have climbed onto vehicle roofs awaiting rescue. Current water flow velocity estimated at 1.2 m/s.",
+    "reporter": {
+      "source": "Automated Ultrasonic Depth Sensor (FL-SENS-09)",
+      "contact": "Municipal Drainage Telemetry Server"
+    },
+    "impact": {
+      "casualties": 0,
+      "injuries": 1,
+      "trappedIndividuals": 7,
+      "evacuationCount": 12,
+      "propertyDamageEstimate": "Moderate"
+    },
+    "assignedUnits": [
+      {
+        "unitId": "WATER-RESCUE-01",
+        "type": "Swiftwater Rescue Boat Unit (IRB)",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "PUMP-TRUCK-04",
+        "type": "Mobile High-Capacity Dewatering Unit (3000 GPM)",
+        "status": "En Route",
+        "etaMinutes": 4
+      },
+      {
+        "unitId": "PATROL-19",
+        "type": "Police Interceptor Barrier Unit",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "MEDIC-09",
+        "type": "Basic Life Support (BLS) Ambulance",
+        "status": "On Scene",
+        "etaMinutes": 0
+      }
+    ],
+    "actionPlan": [
+      "Automatically drop hydraulic road barriers at north and south underpass entrances.",
+      "Deploy inflatable swiftwater rescue boat with tethered safety lines to extract roof-stranded passengers.",
+      "Isolate roadside electrical street-lighting feeder pillars to prevent waterborne electrocution.",
+      "Position high-capacity diesel dewatering pumps discharging into main interceptor canal.",
+      "Update municipal transit alerts and Google/Waze navigation feeds to flag complete underpass closure."
+    ],
+    "requiredResources": [
+      "Inflatable Rescue Boat with Outboard Motor",
+      "Life Jackets & Throw Bags",
+      "3000 GPM Dewatering Sludge Pump",
+      "Waterproof Barrier Warning Systems",
+      "Hypothermia Thermal Blankets"
+    ],
+    "relatedKnowledgeDoc": "knowledge-base/flood-demo.txt"
+  },
+  {
+    "id": "INC-2026-104",
+    "title": "High-Pressure Natural Gas Pipeline Rupture during Metro Excavation",
+    "category": "Infrastructure hazard",
+    "severity": "Critical",
+    "status": "Active",
+    "timestamp": "2026-09-08T15:10:45Z",
+    "location": {
+      "address": "400 Liberty Avenue & 9th Street",
+      "district": "Civic Center District",
+      "zone": "Sector 1",
+      "latitude": 37.7788,
+      "longitude": -122.4182,
+      "landmark": "Metro Line 3 Underground Station Worksite"
+    },
+    "description": "A 12-inch high-pressure gas distribution pipeline was inadvertently breached by a heavy hydraulic piling excavator. High-velocity gas release with audible hiss and strong mercaptan odor detected across a 4-block radius. Handheld combustible gas indicators show ambient LEL (Lower Explosive Limit) at 24% at 50 meters. Imminent danger of catastrophic vapor cloud explosion if ignition source is encountered.",
+    "reporter": {
+      "source": "Site Safety Engineer & Automated Optical Gas Sensor",
+      "contact": "Civic Works Metro Project Team"
+    },
+    "impact": {
+      "casualties": 0,
+      "injuries": 2,
+      "trappedIndividuals": 0,
+      "evacuationCount": 520,
+      "propertyDamageEstimate": "High Risk"
+    },
+    "assignedUnits": [
+      {
+        "unitId": "HAZMAT-01",
+        "type": "Specialized Chemical & Gas Hazard Response Unit",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "GAS-UTILITY-03",
+        "type": "Emergency Gas Main Valve Shutoff Crew",
+        "status": "En Route",
+        "etaMinutes": 2
+      },
+      {
+        "unitId": "ENG-02",
+        "type": "Fire Pumper (Water Fog Dispersion)",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "POLICE-DIV-01",
+        "type": "Tactical Perimeter Cordon Unit",
+        "status": "On Scene",
+        "etaMinutes": 0
+      }
+    ],
+    "actionPlan": [
+      "Establish immediate 300-meter exclusion Hot Zone cordon; evacuate all commercial and residential structures.",
+      "Remotely trigger SCADA shutoff of upstream Sectional Valve SV-12 and downstream SV-13.",
+      "Instruct Power Distribution Utility to de-energize overhead power cables and street transformers within radius.",
+      "Deploy broad water spray fog nozzles to disperse gas concentration below LEL.",
+      "Send emergency Cell Broadcast Warning Alert to residents inside danger zone to turn off stoves and avoid electrical switches."
+    ],
+    "requiredResources": [
+      "Combustible Gas Detectors (LEL Sniffers)",
+      "Intrinsically Safe Radios & Tools",
+      "High-Expansion Foam / Water Fog Canons",
+      "Emergency Evacuation Sirens",
+      "Gas Line Pinch-Off Hydraulic Clamps"
+    ],
+    "relatedKnowledgeDoc": "knowledge-base/public-safety-demo.txt"
+  },
+  {
+    "id": "INC-2026-105",
+    "title": "Mass Heat Stress & Syncope Outbreak at Central Transit Terminal",
+    "category": "Medical emergency",
+    "severity": "High",
+    "status": "In Progress",
+    "timestamp": "2026-09-08T16:35:10Z",
+    "location": {
+      "address": "Union Hub Central Railway Station, Concourse Level",
+      "district": "Downtown Transit District",
+      "zone": "Sector 3",
+      "latitude": 37.7845,
+      "longitude": -122.3998,
+      "landmark": "Main Passenger Waiting Concourse"
+    },
+    "description": "Failure of main HVAC chiller plant coinciding with an extreme urban heatwave (ambient temperature 41.5°C) and heavy peak-hour holiday crowding has led to multiple passengers collapsing. Over 15 individuals reported unconscious or exhibiting symptoms of severe heat stroke, hyperthermia, delirium, and dehydration. High risk of crowd panic if medical response is delayed.",
+    "reporter": {
+      "source": "Railway Police Command Station & CCTV Thermal Sensors",
+      "contact": "Transit Operations Center"
+    },
+    "impact": {
+      "casualties": 0,
+      "injuries": 18,
+      "trappedIndividuals": 0,
+      "evacuationCount": 350,
+      "propertyDamageEstimate": "None"
+    },
+    "assignedUnits": [
+      {
+        "unitId": "MCI-TRIAGE-01",
+        "type": "Mass Casualty Incident Medical Team",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "MEDIC-11",
+        "type": "Advanced Life Support (ALS) Ambulance",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "MEDIC-16",
+        "type": "Advanced Life Support (ALS) Ambulance",
+        "status": "En Route",
+        "etaMinutes": 5
+      },
+      {
+        "unitId": "DISASTER-BUS-01",
+        "type": "Multi-Patient Medical Transport Bus (12 Litters)",
+        "status": "En Route",
+        "etaMinutes": 7
+      },
+      {
+        "unitId": "RED-CROSS-02",
+        "type": "Emergency Hydration & Cooling Unit",
+        "status": "On Scene",
+        "etaMinutes": 0
+      }
+    ],
+    "actionPlan": [
+      "Designate Air-Conditioned VIP Executive Lounge on Platform 1 as emergency cold-immersion triage station.",
+      "Deploy rapid cooling packs, IV normal saline hydration, and electric misting fans.",
+      "Apply START triage to isolate unstable hyperthermic patients (core temp > 40°C) for emergency transport.",
+      "Open emergency exit gates to divert 40% of concourse foot traffic to shaded exterior plazas.",
+      "Coordinate with General Hospital for incoming heat stroke emergency admissions."
+    ],
+    "requiredResources": [
+      "IV Fluids & Infusion Sets",
+      "Active Cooling Ice Packs & Thermal Blankets",
+      "Portable Vital Signs Monitors",
+      "Electrolyte Hydration Sachets & Clean Water",
+      "Multi-Litter Medical Transport Bus"
+    ],
+    "relatedKnowledgeDoc": "knowledge-base/public-safety-demo.txt"
+  },
+  {
+    "id": "INC-2026-106",
+    "title": "Chemical Processing Warehouse Toxic Fire",
+    "category": "Fire",
+    "severity": "Critical",
+    "status": "Active",
+    "timestamp": "2026-09-08T18:02:40Z",
+    "location": {
+      "address": "1250 Industrial Park Drive, Bay 4",
+      "district": "Eastern Industrial Zone",
+      "zone": "Sector 8",
+      "latitude": 37.7521,
+      "longitude": -122.3876,
+      "landmark": "Near Chemical Distribution Depot"
+    },
+    "description": "Large-scale fire within an industrial warehouse storing solvents, toluene diisocyanate (TDI), and organic peroxides. Heavy plume of purple-tinted toxic smoke venting through collapsed roof vents. Secondary chemical drum explosions heard on site. Runoff water mixed with toxic chemicals threatens nearby stormwater retention basin.",
+    "reporter": {
+      "source": "Industrial Sensor Grid & 911 Citizen Reports",
+      "contact": "Industrial Safety Liaison M. Chen"
+    },
+    "impact": {
+      "casualties": 1,
+      "injuries": 5,
+      "trappedIndividuals": 1,
+      "evacuationCount": 180,
+      "propertyDamageEstimate": "Total Loss Expected"
+    },
+    "assignedUnits": [
+      {
+        "unitId": "FOAM-TENDER-01",
+        "type": "Airport-Grade Heavy Foam Crash Tender (10,000L)",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "ENG-10",
+        "type": "Industrial Fire Engine",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "HAZMAT-02",
+        "type": "Specialized Decontamination & Toxic Gas Unit",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "DRONE-RECON-01",
+        "type": "Thermal & Chemical Gas Sensor Drone",
+        "status": "Airborne",
+        "etaMinutes": 0
+      }
+    ],
+    "actionPlan": [
+      "Establish 800-meter downwind toxic plume isolation zone; initiate reverse 911 shelter-in-place warnings.",
+      "Strictly prohibit direct water application on organic peroxide stacks; apply Alcohol-Resistant AR-AFFF foam blanket.",
+      "Construct earthen berms and deploy absorbent booms to contain toxic chemical runoff.",
+      "Launch drone plume tracking to monitor sulfur dioxide and isocyanate dispersion toward residential sector.",
+      "Set up Level B decontamination corridor at the boundary of Warm and Cold zones."
+    ],
+    "requiredResources": [
+      "AR-AFFF Foam Concentrate",
+      "Level A/B Fully Encapsulated HAZMAT Suits",
+      "Chemical Runoff Booms & Earthen Sand Barriers",
+      "Toxic Air Plume Dispersion Drone",
+      "Decontamination Shower Stations"
+    ],
+    "relatedKnowledgeDoc": "knowledge-base/fire-demo.txt"
+  },
+  {
+    "id": "INC-2026-107",
+    "title": "Major Flyover Cantilever Structural Defect & Impending Collapse",
+    "category": "Infrastructure hazard",
+    "severity": "Critical",
+    "status": "Active",
+    "timestamp": "2026-09-08T19:20:00Z",
+    "location": {
+      "address": "Bayside Expressway Elevated Viaduct, Pier P-42",
+      "district": "Harbor Corridor",
+      "zone": "Sector 6",
+      "latitude": 37.7965,
+      "longitude": -122.3921,
+      "landmark": "Directly above Marina Boulevard Intersection"
+    },
+    "description": "Continuous vibration and heavy freight transit has caused a catastrophic shear crack across the reinforced concrete cantilever arm of Pier P-42. Laser displacement sensors mounted on the bridge deck detected a 68 mm downward sag over the past 90 minutes. Concrete spalling is dropping debris onto busy surface street below. Total structural collapse is probable under continuing dynamic vehicular load.",
+    "reporter": {
+      "source": "Smart Bridge Health Monitoring System (SHM-P42)",
+      "contact": "Department of Transportation Structural Control"
+    },
+    "impact": {
+      "casualties": 0,
+      "injuries": 0,
+      "trappedIndividuals": 0,
+      "evacuationCount": 85,
+      "propertyDamageEstimate": "Critical Structural Hazard"
+    },
+    "assignedUnits": [
+      {
+        "unitId": "ENG-CORP-01",
+        "type": "Municipal Structural Heavy Shoring Division",
+        "status": "En Route",
+        "etaMinutes": 6
+      },
+      {
+        "unitId": "TRAFFIC-TASKFORCE-04",
+        "type": "Highway Full Closure & Diversion Squad",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "POLICE-DIV-03",
+        "type": "Area Evacuation & Perimeter Defense Unit",
+        "status": "On Scene",
+        "etaMinutes": 0
+      }
+    ],
+    "actionPlan": [
+      "Enact instant total traffic ban across upper elevated deck and lower surface roadway within 200 meters.",
+      "Deploy variable messaging road signs and GPS geo-fencing to divert 35,000 daily vehicles.",
+      "Position hydraulic heavy-load shoring towers underneath cantilever arm P-42 to arrest further deflection.",
+      "Evacuate commercial offices and restaurants situated within the 100m fall radius.",
+      "Conduct continuous 3D LiDAR and ultrasonic scanning of internal rebar stress tendons."
+    ],
+    "requiredResources": [
+      "Heavy Concrete Shoring Towers (200-Ton Rating)",
+      "High-Intensity Warning Barricades & Flashing Signs",
+      "Mobile 3D LiDAR Scanner",
+      "Hydraulic Jacking Systems",
+      "Police Interceptor Units for Blockades"
+    ],
+    "relatedKnowledgeDoc": "knowledge-base/public-safety-demo.txt"
+  },
+  {
+    "id": "INC-2026-108",
+    "title": "Riverbank Embankment Breach Flooding Residential Settlements",
+    "category": "Flood",
+    "severity": "High",
+    "status": "In Progress",
+    "timestamp": "2026-09-08T20:15:22Z",
+    "location": {
+      "address": "Greenfield Riverside Settlement, Ward 11",
+      "district": "Southern Lowlands",
+      "zone": "Sector 11",
+      "latitude": 37.7342,
+      "longitude": -122.4419,
+      "landmark": "Near South Canal Sluice Gate"
+    },
+    "description": "Continuous torrential runoff from upstream catchment has caused a 25-meter breach in the earthen riverbank protection dike. Fast-flowing floodwaters (depth 0.7m to 1.4m) have inundated over 140 single-story residential dwellings. Over 300 residents are isolated on rooftops and upper floors. Power lines have shorted and local access roads are cut off.",
+    "reporter": {
+      "source": "Citizen Emergency Hotlines & River Basin Telemetry",
+      "contact": "Community Ward Representative"
+    },
+    "impact": {
+      "casualties": 0,
+      "injuries": 3,
+      "trappedIndividuals": 45,
+      "evacuationCount": 210,
+      "propertyDamageEstimate": "Extensive"
+    },
+    "assignedUnits": [
+      {
+        "unitId": "DISASTER-RESCUE-01",
+        "type": "National Disaster Response Force (NDRF) Team",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "BOAT-SQUAD-04",
+        "type": "Inflatable Motorized Raft Squad (6 Rafts)",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "HEAVY-ENG-05",
+        "type": "Earthmoving & Sandbag Armor Division",
+        "status": "En Route",
+        "etaMinutes": 8
+      },
+      {
+        "unitId": "MEDIC-BUS-02",
+        "type": "Mobile Disaster Field Clinic",
+        "status": "On Scene",
+        "etaMinutes": 0
+      }
+    ],
+    "actionPlan": [
+      "Mobilize fleet of motorized inflatable rescue craft to evacuate stranded elderly, children, and infants.",
+      "Transport evacuees to designated highland safe haven at Government High School Complex.",
+      "Dump heavy granite boulder riprap and geo-synthetic sand containers into the breach zone using excavators.",
+      "Issue urgent potable drinking water rations and halogen water-purification tablets.",
+      "Implement vector-control fogging to counteract stagnant waterborne epidemics."
+    ],
+    "requiredResources": [
+      "Motorized Inflatable Rescue Rafts",
+      "Heavy Earthmovers (JCB / Excavators)",
+      "High-Density Polypropylene Sandbags (10,000 count)",
+      "Emergency Potable Water Purification Units",
+      "Temporary Relief Cots & Emergency Food Packets"
+    ],
+    "relatedKnowledgeDoc": "knowledge-base/flood-demo.txt"
+  },
+  {
+    "id": "INC-2026-109",
+    "title": "Double-Decker Transit Bus Collision with Fuel Tanker",
+    "category": "Road accident",
+    "severity": "Critical",
+    "status": "Active",
+    "timestamp": "2026-09-08T20:55:10Z",
+    "location": {
+      "address": "Avenue of the Americas & 4th Street",
+      "district": "Commercial Center",
+      "zone": "Sector 5",
+      "latitude": 37.7819,
+      "longitude": -122.4088,
+      "landmark": "Outside Metropolitan Library"
+    },
+    "description": "T-bone collision between a fully loaded municipal double-decker electric bus and a medium commercial fuel distributor truck. Bus has tilted onto its side against a concrete median. 30+ passengers trapped inside the upper and lower passenger decks. Minor fuel leak from the distribution truck's secondary tank. High-voltage battery pack in the electric bus is displaying elevated thermal sensor readings.",
+    "reporter": {
+      "source": "Smart City Intersection AI Camera (CAM-INT-109)",
+      "contact": "Metropolitan Transit Operations"
+    },
+    "impact": {
+      "casualties": 1,
+      "injuries": 14,
+      "trappedIndividuals": 18,
+      "evacuationCount": 25,
+      "propertyDamageEstimate": "Severe"
+    },
+    "assignedUnits": [
+      {
+        "unitId": "RESCUE-01",
+        "type": "Heavy Extrication & Crane Unit",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "ENG-05",
+        "type": "EV Battery Thermal Cooling Fire Tender",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "MEDIC-TRIAGE-01",
+        "type": "Mobile Trauma Resuscitation Unit",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "MEDIC-08",
+        "type": "Advanced Life Support (ALS) Ambulance",
+        "status": "En Route",
+        "etaMinutes": 3
+      },
+      {
+        "unitId": "MEDIC-15",
+        "type": "Advanced Life Support (ALS) Ambulance",
+        "status": "En Route",
+        "etaMinutes": 4
+      }
+    ],
+    "actionPlan": [
+      "Stabilize tilted double-decker bus using heavy pneumatic rescue struts to prevent full rollover.",
+      "Establish continuous water mist cooling bath on EV battery compartment to suppress thermal runaway.",
+      "Create primary patient extrication pathways via roof emergency escape hatches and windshield removal.",
+      "Execute rapid START triage color tagging; dispatch priority RED patients to University Trauma Hospital.",
+      "Close Avenue of the Americas in both directions; reroute surface bus lines 12, 14, and 33."
+    ],
+    "requiredResources": [
+      "Heavy Duty Vehicle Stabilization Struts",
+      "Hydraulic Cutters and Spreaders",
+      "EV Battery Suppression Fog Nozzles",
+      "MCI Triage Tags and Trauma Kits",
+      "Heavy Lift Recovery Crane (40-Ton)"
+    ],
+    "relatedKnowledgeDoc": "knowledge-base/accident-demo.txt"
+  },
+  {
+    "id": "INC-2026-110",
+    "title": "Chlorine Gas Leak at Municipal Water Treatment Plant",
+    "category": "Medical emergency",
+    "severity": "Critical",
+    "status": "In Progress",
+    "timestamp": "2026-09-08T21:40:00Z",
+    "location": {
+      "address": "88 Clearwater Way, Central Water Works",
+      "district": "Utility Corridor",
+      "zone": "Sector 9",
+      "latitude": 37.7602,
+      "longitude": -122.4045,
+      "landmark": "Near South Reservoir Park"
+    },
+    "description": "Valve stem shear on a 1-ton liquefied chlorine storage cylinder during maintenance transfer. Greenish-yellow toxic vapor cloud drifting westward toward an adjacent sports complex and residential apartments. Multiple facility workers suffering from acute pulmonary irritation, severe coughing, and ocular chemical burns. Immediate life safety threat downwind.",
+    "reporter": {
+      "source": "Fixed Electrochemical Toxic Gas Sensor (CL2-SENS-04)",
+      "contact": "Water Treatment Plant Shift Supervisor"
+    },
+    "impact": {
+      "casualties": 0,
+      "injuries": 8,
+      "trappedIndividuals": 2,
+      "evacuationCount": 420,
+      "propertyDamageEstimate": "Moderate"
+    },
+    "assignedUnits": [
+      {
+        "unitId": "HAZMAT-TECH-01",
+        "type": "Specialized Chlorine C-Kit Emergency Response Team",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "ENG-08",
+        "type": "Chemical Vapor Scrubbing Pumper Engine",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "MEDIC-RESP-01",
+        "type": "Specialized Inhalation Toxicology Ambulance",
+        "status": "On Scene",
+        "etaMinutes": 0
+      },
+      {
+        "unitId": "POLICE-CORDON-05",
+        "type": "Rapid Zone Evacuation Police Squad",
+        "status": "On Scene",
+        "etaMinutes": 0
+      }
+    ],
+    "actionPlan": [
+      "Don Level A encapsulated suits with SCBA; deploy Chlorine Cylinder Emergency Kit 'B' / 'C' capping hood over leaking valve.",
+      "Deploy wide-angle water curtains around the cylinder bay to absorb and neutralize airborne chlorine gas into dilute hypochlorous acid.",
+      "Evacuate sports complex and residential blocks downwind within 600-meter cone.",
+      "Administer nebulized sodium bicarbonate and humidified 100% oxygen to patients with chemical pneumonitis.",
+      "Coordinate with municipal environmental protection agency to monitor air quality recovery."
+    ],
+    "requiredResources": [
+      "Chlorine Emergency Capping Kit 'B' & 'C'",
+      "Level A Vapor-Protective Chemical Ensembles",
+      "Water Spray Curtain Fog Nozzles",
+      "Nebulizers & Medical Oxygen Cylinders",
+      "Colorimetric Gas Detection Tubes"
+    ],
+    "relatedKnowledgeDoc": "knowledge-base/public-safety-demo.txt"
+  }
+]

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Details | ResQ-AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .incident-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; border-bottom: 1px solid var(--glass-border); padding-bottom: 20px;}
+        .timeline { position: relative; margin-top: 20px; padding-left: 20px;}
+        .timeline::before { content: ''; position: absolute; left: 0; top: 5px; bottom: 0; width: 2px; background: var(--glass-border); }
+        .tl-item { position: relative; margin-bottom: 20px; }
+        .tl-dot { position: absolute; left: -25px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg-glass); border: 2px solid var(--glass-border); z-index: 1;}
+        .tl-item.active .tl-dot { background: var(--primary); border-color: var(--primary-glow); box-shadow: 0 0 10px var(--primary); }
+        .tl-time { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; }
+        .tl-content { font-size: 0.9rem; color: var(--text-primary); }
+        
+        .map-placeholder { background: rgba(0,0,0,0.8); border: 1px solid var(--glass-border); border-radius: 12px; height: 300px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 20px;}
+        .map-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px); background-size: 30px 30px; }
+        
+        .radar-container { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+        .radar-circle { position: absolute; border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 50%; }
+        .radar-circle-1 { width: 100px; height: 100px; }
+        .radar-circle-2 { width: 200px; height: 200px; border-color: rgba(59, 130, 246, 0.15); }
+        .radar-circle-3 { width: 300px; height: 300px; border-color: rgba(59, 130, 246, 0.05); }
+        .radar-sweep { position: absolute; width: 150px; height: 150px; background: conic-gradient(from 0deg, transparent 70%, rgba(59, 130, 246, 0.5) 100%); border-radius: 50%; transform-origin: center; animation: radarSweep 4s linear infinite; clip-path: polygon(50% 50%, 100% 0, 100% 100%); left: 50%; top: 50%; margin-left: -75px; margin-top: -75px;}
+        @keyframes radarSweep { 100% { transform: rotate(360deg); } }
+
+        .map-marker { position: relative; z-index: 10; color: var(--critical); display: flex; flex-direction: column; align-items: center; text-shadow: 0 0 10px rgba(0,0,0,0.8);}
+        .map-pulse { position: absolute; width: 60px; height: 60px; border-radius: 50%; background: rgba(239, 68, 68, 0.3); border: 1px solid rgba(239, 68, 68, 0.8); animation: pulseMap 2s ease-out infinite; z-index: 1;}
+        @keyframes pulseMap { 0% { transform: scale(0.2); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+
+        .verification-panel { background: rgba(234, 179, 8, 0.05); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 12px; padding: 24px; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <resq-navbar status="AI SYSTEM ONLINE"></resq-navbar>
+
+    <main class="main-content">
+        <div class="container fade-in">
+            <div class="incident-header">
+                <div>
+                    <div style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:5px; display:flex; align-items:center; gap:8px;">
+                        INCIDENT DOSSIER <span class="badge" style="background:var(--bg-glass);">HUMAN-IN-THE-LOOP REQUIRED</span>
+                    </div>
+                    <h1 style="font-family: monospace; font-size: 2.5rem;" id="incId">INC-0000</h1>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:5px;">CURRENT STATUS</div>
+                    <div id="incStatus" class="badge">Loading...</div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <!-- Left Col -->
+                <div>
+                    <div class="glass-card mb-20" style="padding: 24px;">
+                        <h3 style="margin-bottom: 15px; display:flex; align-items:center; gap:8px;"><i data-lucide="file-text" style="color:var(--primary);"></i> Citizen Report</h3>
+                        <div style="display:grid; grid-template-columns: 100px 1fr; gap: 12px; margin-bottom: 15px; font-size:0.95rem;">
+                            <span style="color:var(--text-muted);">Category</span>
+                            <span id="incType" style="font-weight:500;"></span>
+                            <span style="color:var(--text-muted);">Location</span>
+                            <span id="incLocation"></span>
+                            <span style="color:var(--text-muted);">Impact</span>
+                            <span id="incPeople"></span>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; font-size: 0.9rem; color: var(--text-secondary); font-style: italic;" id="incDesc">
+                        </div>
+                    </div>
+
+                    <div class="glass-card mb-20" style="padding: 24px;">
+                        <h3 style="margin-bottom: 15px; display:flex; align-items:center; gap:8px;"><i data-lucide="cpu" style="color:var(--accent);"></i> AI Granite Analysis</h3>
+                        <div style="display:flex; gap:15px; margin-bottom: 20px;">
+                            <div style="flex:1; background:rgba(0,0,0,0.2); padding:15px; border-radius:8px; text-align:center; border:1px solid var(--glass-border);">
+                                <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:5px;">SEVERITY</div>
+                                <span id="incSeverity" class="badge"></span>
+                            </div>
+                            <div style="flex:1; background:rgba(0,0,0,0.2); padding:15px; border-radius:8px; text-align:center; border:1px solid var(--glass-border);">
+                                <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:5px;">PRIORITY</div>
+                                <span id="incPriority" class="badge"></span>
+                            </div>
+                        </div>
+                        <div style="font-size:0.9rem;">
+                            <strong style="color:var(--text-primary);">Summary:</strong> <span id="incSummary" style="color:var(--text-secondary);"></span>
+                            <br><br>
+                            <strong style="color:var(--text-primary);">Reasoning:</strong> <span id="incExplanation" style="color:var(--text-secondary);"></span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 24px; border-left: 3px solid var(--info);">
+                        <h3 style="margin-bottom: 15px; display:flex; align-items:center; gap:8px;"><i data-lucide="book-open" style="color:var(--info);"></i> Hybrid RAG Guidance</h3>
+                        <p id="incRag" style="font-size: 0.95rem; line-height: 1.6;"></p>
+                        <div style="margin-top: 15px; font-size: 0.8rem; color: var(--text-muted); display:flex; align-items:center; gap:5px;">
+                            <i data-lucide="link" style="width:12px;"></i> Source: <span id="incRagSource"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Col -->
+                <div>
+                    <div class="map-placeholder">
+                        <div class="map-grid"></div>
+                        <div class="radar-container">
+                            <div class="radar-circle radar-circle-1"></div>
+                            <div class="radar-circle radar-circle-2"></div>
+                            <div class="radar-circle radar-circle-3"></div>
+                            <div class="radar-sweep"></div>
+                            <div class="map-marker">
+                                <div class="map-pulse"></div>
+                                <i data-lucide="crosshair" style="width: 32px; height: 32px; position:relative; z-index:2; fill: var(--bg-base); color: var(--critical)"></i>
+                            </div>
+                        </div>
+                        <div style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.7); padding:5px 10px; border-radius:4px; font-size:0.75rem; border:1px solid var(--glass-border);">GEO-TRACKING ACTIVE</div>
+                        <div style="position:absolute; bottom:10px; right:10px; font-size:0.7rem; color: var(--primary); font-family: monospace;">LAT: <span id="mapLat">40.7128</span><br>LNG: <span id="mapLng">-74.0060</span></div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 24px;">
+                        <h3 style="margin-bottom: 15px;">Incident Timeline</h3>
+                        <div class="timeline" id="timelineCont">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <div class="verification-panel fade-in delay-2" id="verificationPanel">
+                        <h3 style="margin-bottom: 10px; color: var(--medium); display:flex; align-items:center; gap:8px;"><i data-lucide="shield"></i> Human Verification Required</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">AI recommendations must be reviewed by an authorized dispatcher before resources are committed.</p>
+                        
+                        <div style="display:flex; flex-direction:column; gap:10px;">
+                            <button class="btn btn-success" style="width:100%; justify-content:center;" onclick="updateStatus('Verified')"><i data-lucide="check"></i> Verify & Accept AI Assessment</button>
+                            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="updateStatus('In Progress')"><i data-lucide="truck"></i> Dispatch Units (In Progress)</button>
+                            <div style="display:flex; gap:10px; margin-top: 10px;">
+                                <button class="btn btn-secondary" style="flex:1;" onclick="updateStatus('Resolved')"><i data-lucide="check-square"></i> Resolve</button>
+                                <button class="btn btn-danger" style="flex:1;" onclick="updateStatus('Rejected')"><i data-lucide="x-circle"></i> Reject (False)</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="toastContainer" class="toast-container"></div>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/incident.js"></script>
+</body>
+</html>

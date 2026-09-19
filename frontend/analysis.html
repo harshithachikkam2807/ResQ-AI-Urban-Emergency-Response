@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Processing | ResQ-AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .analysis-container { max-width: 1000px; margin: 0 auto; }
+        
+        .agent-workflow { display: flex; justify-content: space-between; position: relative; margin: 40px 0; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border); }
+        .agent-node { display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 1; width: 100px; text-align: center; }
+        .node-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--bg-glass); border: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: var(--transition); color: var(--text-secondary); }
+        .node-label { font-size: 0.75rem; color: var(--text-secondary); }
+        
+        .agent-node.active .node-icon { border-color: var(--primary); background: rgba(59, 130, 246, 0.1); color: var(--primary); box-shadow: 0 0 20px var(--primary-glow); animation: pulse 1.5s infinite; }
+        .agent-node.active .node-label { color: var(--text-primary); font-weight: 600; }
+        
+        .agent-node.completed .node-icon { border-color: var(--low); background: rgba(34, 197, 94, 0.1); color: var(--low); }
+        
+        .agent-line { position: absolute; top: 44px; left: 50px; right: 50px; height: 2px; background: var(--glass-border); z-index: 0; }
+        
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        
+        #resultsView { display: none; }
+        
+        .rag-demo-panel { background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.2); border-radius: 12px; padding: 24px; margin-top: 24px; }
+    </style>
+</head>
+<body>
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <resq-navbar status="AI SYSTEM ONLINE"></resq-navbar>
+
+    <main class="main-content">
+        <div class="container analysis-container">
+            
+            <div id="processingView" class="fade-in">
+                <h2 style="text-align: center; margin-bottom: 10px;">IBM BOB Agent Workflow Orchestration</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">Executing multi-agent triage and Retrieval-Augmented Generation...</p>
+                
+                <div class="agent-workflow">
+                    <div class="agent-line"></div>
+                    <div class="agent-node" id="node-receive">
+                        <div class="node-icon"><i data-lucide="file-input"></i></div>
+                        <div class="node-label">Ingestion</div>
+                    </div>
+                    <div class="agent-node" id="node-classify">
+                        <div class="node-icon"><i data-lucide="cpu"></i></div>
+                        <div class="node-label">Granite Classification</div>
+                    </div>
+                    <div class="agent-node" id="node-rag">
+                        <div class="node-icon"><i data-lucide="database"></i></div>
+                        <div class="node-label">RAG Context Retrieval</div>
+                    </div>
+                    <div class="agent-node" id="node-severity">
+                        <div class="node-icon"><i data-lucide="alert-triangle"></i></div>
+                        <div class="node-label">Priority Assessment</div>
+                    </div>
+                    <div class="agent-node" id="node-human">
+                        <div class="node-icon"><i data-lucide="user-check"></i></div>
+                        <div class="node-label">Dispatcher Review</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resultsView" class="fade-in">
+                <div class="glass-card" style="border-left: 4px solid var(--primary);">
+                    <div style="display:flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;">
+                        <div>
+                            <div style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:4px;">INCIDENT ID</div>
+                            <h2 id="resId" style="font-family: monospace;">INC-WAIT...</h2>
+                        </div>
+                        <div class="badge warning"><i data-lucide="alert-circle" style="width:14px; margin-right:4px;"></i> HUMAN VERIFICATION REQUIRED</div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div>
+                            <h4 style="margin-bottom: 12px; color: var(--text-secondary);">Granite Extraction</h4>
+                            <div style="background: rgba(0,0,0,0.2); padding: 16px; border-radius: 8px; border: 1px solid var(--glass-border);">
+                                <div style="display:grid; grid-template-columns: 100px 1fr; gap: 10px; margin-bottom: 8px;">
+                                    <span style="color:var(--text-muted); font-size:0.85rem;">CATEGORY</span>
+                                    <span id="resType" style="font-weight:600;"></span>
+                                </div>
+                                <div style="display:grid; grid-template-columns: 100px 1fr; gap: 10px; margin-bottom: 8px;">
+                                    <span style="color:var(--text-muted); font-size:0.85rem;">LOCATION</span>
+                                    <span id="resLoc"></span>
+                                </div>
+                                <div style="display:grid; grid-template-columns: 100px 1fr; gap: 10px;">
+                                    <span style="color:var(--text-muted); font-size:0.85rem;">AFFECTED</span>
+                                    <span id="resPeople"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 style="margin-bottom: 12px; color: var(--text-secondary);">AI Triage Assessment</h4>
+                            <div style="background: rgba(0,0,0,0.2); padding: 16px; border-radius: 8px; border: 1px solid var(--glass-border); display:flex; gap:20px; align-items:center; height: calc(100% - 33px);">
+                                <div style="text-align:center;">
+                                    <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:4px;">SEVERITY</div>
+                                    <span id="resSev" class="badge" style="font-size:1.1rem; padding: 6px 16px;"></span>
+                                </div>
+                                <div style="width:1px; height:40px; background:var(--glass-border);"></div>
+                                <div style="text-align:center;">
+                                    <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:4px;">PRIORITY</div>
+                                    <span id="resPri" class="badge" style="font-size:1.1rem; padding: 6px 16px;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-20">
+                        <h4 style="margin-bottom: 12px; color: var(--text-secondary);">AI Reasoning</h4>
+                        <p id="resExp" style="background: rgba(0,0,0,0.2); padding: 16px; border-radius: 8px; border: 1px solid var(--glass-border); border-left: 2px solid var(--info); font-size:0.95rem;"></p>
+                    </div>
+
+                    <!-- RAG Pipeline Visualization -->
+                    <div class="rag-demo-panel">
+                        <h4 style="margin-bottom: 20px; color: var(--accent); display:flex; align-items:center; gap:8px;"><i data-lucide="network"></i> Hybrid RAG Pipeline Executed</h4>
+                        
+                        <div class="rag-pipeline">
+                            <div class="rag-step active">
+                                <div class="rag-icon"><i data-lucide="search"></i></div>
+                                <div class="rag-content">
+                                    <div style="font-size:0.75rem; color:var(--text-muted);">VECTOR QUERY GENERATED</div>
+                                    <div id="ragQuery" style="font-family:monospace; font-size:0.85rem;"></div>
+                                </div>
+                            </div>
+                            <div class="rag-line active"></div>
+                            <div class="rag-step active">
+                                <div class="rag-icon"><i data-lucide="file-text"></i></div>
+                                <div class="rag-content">
+                                    <div style="font-size:0.75rem; color:var(--text-muted);">RETRIEVED KNOWLEDGE (BM25 + Dense)</div>
+                                    <div id="ragSource" class="badge mb-20 mt-20" style="margin:5px 0;"></div>
+                                </div>
+                            </div>
+                            <div class="rag-line active"></div>
+                            <div class="rag-step active">
+                                <div class="rag-icon" style="background: rgba(139, 92, 246, 0.1); color: var(--accent); border-color: var(--accent);"><i data-lucide="cpu"></i></div>
+                                <div class="rag-content" style="border-left: 3px solid var(--accent);">
+                                    <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:5px;">GRANITE GROUNDED RESPONSE</div>
+                                    <div id="ragAns" style="font-weight:500;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-40" style="display:flex; justify-content: flex-end;">
+                        <a href="dashboard.html" class="btn btn-primary">Forward to Command Center <i data-lucide="arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <script src="js/storage.js"></script>
+    <script src="js/navbar.js"></script>
+    <script type="module">
+        import { analyzeIncident } from '../ai/granite-service.js';
+        import { getGuidance } from '../ai/rag-service.js';
+        
+        lucide.createIcons();
+        
+        document.addEventListener('DOMContentLoaded', async () => {
+            const reportStr = sessionStorage.getItem('currentReport');
+            if (!reportStr) { window.location.href = 'report.html'; return; }
+            const reportData = JSON.parse(reportStr);
+
+            const nRec = document.getElementById('node-receive');
+            const nCls = document.getElementById('node-classify');
+            const nRag = document.getElementById('node-rag');
+            const nSev = document.getElementById('node-severity');
+            const nHum = document.getElementById('node-human');
+            
+            // Add status text above nodes if it doesn't exist
+            let statusEl = document.getElementById('aiStatusMsg');
+            if (!statusEl) {
+                const nodesContainer = document.querySelector('.agent-nodes');
+                statusEl = document.createElement('h3');
+                statusEl.id = 'aiStatusMsg';
+                statusEl.style.cssText = 'text-align: center; margin-bottom: 30px; font-weight: 500; color: var(--primary);';
+                nodesContainer.parentNode.insertBefore(statusEl, nodesContainer);
+            }
+
+            try {
+                // Workflow Simulation
+                statusEl.innerText = "Ingesting citizen report data...";
+                nRec.classList.add('active');
+                await new Promise(r => setTimeout(r, 800));
+                nRec.classList.replace('active', 'completed');
+                
+                statusEl.innerText = "Extracting entities & redacting PII...";
+                nCls.classList.add('active');
+                const graniteResult = await analyzeIncident(reportData.description);
+                nCls.classList.replace('active', 'completed');
+
+                statusEl.innerText = "Retrieving relevant SOP via Hybrid RAG...";
+                nRag.classList.add('active');
+                const ragResult = await getGuidance(graniteResult);
+                nRag.classList.replace('active', 'completed');
+
+                statusEl.innerText = "Classifying severity & prioritizing...";
+                nSev.classList.add('active');
+                await new Promise(r => setTimeout(r, 800));
+                nSev.classList.replace('active', 'completed');
+
+                statusEl.innerText = "Finalizing dossier for human review...";
+                nHum.classList.add('active');
+                await new Promise(r => setTimeout(r, 500));
+
+                const finalResult = { 
+                    ...reportData, 
+                    ...graniteResult, 
+                    type: graniteResult.extractedEntities.type,
+                    ragGuidance: ragResult.guidance, 
+                    ragSource: ragResult.source,
+                    peopleAffected: graniteResult.extractedEntities.people
+                };
+                
+                // Save to localStorage
+                const existing = JSON.parse(localStorage.getItem('resq_incidents') || '[]');
+                finalResult.id = 'INC-' + Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+                finalResult.status = "Pending Verification";
+                finalResult.timestamp = new Date().toISOString();
+                existing.push(finalResult);
+                localStorage.setItem('resq_incidents', JSON.stringify(existing));
+
+                // Show Results
+                document.getElementById('processingView').style.display = 'none';
+                document.getElementById('resultsView').style.display = 'block';
+                
+                document.getElementById('resId').innerText = finalResult.id;
+                document.getElementById('resType').innerText = finalResult.type;
+                document.getElementById('resLoc').innerText = finalResult.location || "Unknown";
+                document.getElementById('resPeople').innerText = finalResult.peopleAffected || "Unknown";
+                
+                const sev = document.getElementById('resSev');
+                sev.innerText = finalResult.severity;
+                sev.className = `badge ${finalResult.severity.toLowerCase()}`;
+                
+                const pri = document.getElementById('resPri');
+                pri.innerText = finalResult.priority;
+                pri.className = `badge ${finalResult.priority.toLowerCase()}`;
+                
+                document.getElementById('resExp').innerHTML = finalResult.explanation + (finalResult.confidence ? `<br><br><strong style="color:var(--text-primary);">Confidence Score:</strong> <span class="badge ${finalResult.confidence > 85 ? 'success' : (finalResult.confidence > 50 ? 'warning' : 'critical')}">${finalResult.confidence}%</span>` : '');
+                
+                document.getElementById('ragQuery').innerText = `SELECT chunks FROM vector_db WHERE type='${finalResult.type}' AND sim(desc) > 0.85`;
+                document.getElementById('ragSource').innerText = finalResult.ragSource;
+                document.getElementById('ragAns').innerText = finalResult.ragGuidance;
+
+                sessionStorage.removeItem('currentReport');
+
+            } catch(e) {
+                console.error(e);
+                alert("Processing failed. Please check console.");
+            }
+        });
+    </script>
+</body>
+
+</html>

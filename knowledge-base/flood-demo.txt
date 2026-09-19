@@ -1,0 +1,90 @@
+================================================================================
+DEMO KNOWLEDGE BASE: URBAN FLOOD EMERGENCY RESPONSE & MITIGATION GUIDELINES
+Document ID: KB-EMERG-FLD-2026-V1
+Classification: Municipal Emergency Operations / Standard Operating Procedure
+Target Audience: Incident Commanders, Dispatchers, Urban Planners, First Responders
+================================================================================
+
+1. EXECUTIVE OVERVIEW & SCOPE
+Urban flooding presents high-velocity risks due to impervious concrete surfaces, undersized stormwater drainage, and rapid localized inundation. These guidelines define the AI-assisted response matrix, escalation triggers, rescue priorities, and multi-agency resource allocation rules for citywide flood incidents.
+
+2. SEVERITY CLASSIFICATION MATRIX
+--------------------------------------------------------------------------------
+Level 1 - Minor Waterlogging (Advisory Alert)
+- Water Depth: 5 cm to 15 cm (curb level)
+- Impact: Slow vehicular traffic, minor pedestrian inconvenience.
+- Action: Automated pump activation at identified low-points; municipal drain maintenance dispatch.
+
+Level 2 - Moderate Street Inundation (Warning Alert)
+- Water Depth: 16 cm to 45 cm (above curb level, entering basements)
+- Impact: Stalled light motor vehicles, electrical transformer submergence risk, low-lying ground floor flooding.
+- Action: Traffic diversions via smart VMS (Variable Message Signs); deployment of mobile high-capacity dewatering diesel pumps (2000+ GPM); alert local disaster response units.
+
+Level 3 - Severe Urban Flooding (Emergency Response)
+- Water Depth: 46 cm to 100 cm (waist level)
+- Impact: Stranded buses/cars, structural water ingress, power grid tripping, subterranean transit disruption.
+- Action: Immediate shutdown of low-lying power distribution transformers to prevent electrocution; deployment of inflatable rescue boats (IRBs) and State Disaster Response Force (SDRF); mandatory evacuation of basements and ground-floor tenements.
+
+Level 4 - Catastrophic Inundation / Flash Flood Surge (Crisis Command)
+- Water Depth: > 100 cm or rapid flow velocity exceeding 1.5 m/s
+- Impact: Structural collapse threats, vehicles washed away, widespread isolation of residential pockets.
+- Action: National Disaster Response Force (NDRF) / Military air-lift activation; citywide red alert; emergency sirens; total transit stoppage in affected quadrants.
+
+3. SENSOR & TELEMETRY TRIGGER THRESHOLDS
+- Ultrasonic Flood Sensor Thresholds:
+  * Alert: Level rising > 5 cm in 10 minutes.
+  * Alarm: Level reaching 30 cm above baseline sensor datum.
+- Automated Weather Station (AWS) Rainfall Telemetry:
+  * Moderate: 15-30 mm/hr
+  * Heavy: 30-65 mm/hr
+  * Very Heavy / Cloudburst: > 65 mm/hr
+- Underpass Laser Depth Detectors:
+  * Automated barrier drop activated when water depth reaches 25 cm.
+
+4. STANDARD OPERATING PROCEDURES (SOP)
+Phase 1: Detection & AI Verification (0 - 5 Minutes)
+1. Ingest telemetry from automated water level sensors, stormwater CCTV streams, and 911 citizen calls.
+2. Cross-verify incident location with topographical elevation maps and drainage GIS layers.
+3. Compute inundation projection and rate of rise using hydrological prediction models.
+
+Phase 2: Immediate Containment & Traffic Diversion (5 - 15 Minutes)
+1. Automatically signal Traffic Command Center to trigger green corridors for emergency services.
+2. Route civilian navigation systems away from compromised corridors, underpasses, and riverfront roads.
+3. Deploy police interceptor units to physically barricade flooded underpasses.
+
+Phase 3: Search, Rescue & Evacuation (15 - 45 Minutes)
+1. Deploy Water Rescue Squadrons equipped with outboard motor boats, life jackets, and thermal night-vision gear.
+2. Prioritize evacuation in this order:
+   a. Submerged schools, daycare facilities, and geriatric centers.
+   b. Underground transit stations and subterranean commercial basements.
+   c. Slum settlements along riverbank embankments and drainage nullahs.
+   d. Stranded public transit passengers.
+
+Phase 4: Dewatering & Hazard Mitigation (Continuous)
+1. Position mobile trailer-mounted high-flow sludge pumps.
+2. Direct pumping discharge to designated retention ponds or deep stormwater trunks.
+3. Coordinate with Electricity Distribution Company (DISCOM) for zone-by-zone isolation.
+
+5. RESOURCE ALLOCATION & ASSET DISPATCH MATRIX
+- Rescue Teams:
+  * 1 Water Rescue Unit per 25 stranded individuals in Level 3 zones.
+  * 2 Inflatable rescue boats (IRB) with certified swiftwater rescue technicians per square kilometer of inundation.
+- Dewatering Equipment:
+  * High-head submersible pumps: 4 units per flooded arterial junction.
+  * Heavy-duty suction tankers: 6 units per flooded underpass.
+- Sandbagging & Floodwall Barriers:
+  * Rapid automated sandbag deployment trucks dispatched to hospital perimeters and critical substations.
+- Medical & Relief:
+  * Mobile First Aid Stations stationed at elevated staging areas.
+  * Clean drinking water distribution tankers and dry ration packs dispatched to designated relief shelters.
+
+6. DESIGNATED EVACUATION SHELTERS & CORRIDORS
+- Shelters: Multi-story municipal schools, sports stadiums, and convention halls situated above 100-year flood lines.
+- Safe Corridors: Elevated flyovers and arterial ring roads designated as non-flooding transit arteries.
+- Animal Rescue: Livestock and domestic pets to be directed to elevated fairgrounds.
+
+7. POST-FLOOD SANITATION & EPIDEMIC PREVENTION
+- Chlorine dosing of municipal drinking water mains.
+- Anti-larval spraying to prevent vector-borne disease outbreaks (Dengue, Malaria).
+- Bleaching powder dispersion on cleared road surfaces.
+================================================================================

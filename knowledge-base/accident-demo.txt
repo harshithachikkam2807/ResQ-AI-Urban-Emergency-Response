@@ -1,0 +1,80 @@
+================================================================================
+DEMO KNOWLEDGE BASE: MAJOR TRAFFIC ACCIDENT & MASS CASUALTY COLLISION PROTOCOLS
+Document ID: KB-EMERG-ACC-2026-V1
+Classification: Municipal Emergency Operations / Highway Incident Management SOP
+Target Audience: Traffic Police, Rescue Squads, Emergency Medical Services (EMS), Trauma Units
+================================================================================
+
+1. INCIDENT OVERVIEW & RESPONSE OBJECTIVES
+Urban and expressway traffic accidents represent rapid-onset trauma emergencies requiring seamless coordination between law enforcement, heavy technical rescue squads, and emergency medical systems. The primary mandate is preservation of the "Golden Hour" of trauma resuscitation while preventing secondary pile-ups and clearing vital transit arteries.
+
+2. ACCIDENT SEVERITY & SCALE CLASSIFICATION
+--------------------------------------------------------------------------------
+Level 1: Minor Collision (Property Damage / Minor Abrasions)
+- Profile: 1-2 passenger vehicles, non-entangled, traffic flow partially impeded.
+- Dispatch: 1 Traffic Police Interceptor, 1 Basic Life Support (BLS) Ambulance, 1 Light Tow Truck.
+- Target Clearance: < 20 minutes from arrival.
+
+Level 2: Major Multi-Vehicle Collision (Severe Injury / Single Trapped Victim)
+- Profile: Multi-car impact, rollover, light commercial vehicle, pinned passengers.
+- Dispatch: 2 Traffic Patrol Units, 2 Advanced Life Support (ALS) Ambulances, 1 Heavy Rescue Unit with hydraulic extrication tools, 1 Fire Pumper (engine washdown).
+- Action: Perimeter safety zone, hydraulic rescue cutting, high-priority trauma hospital routing.
+
+Level 3: Mass Casualty Incident (MCI) / Transit Disaster (Bus, Tram, Multiple Heavy Trucks)
+- Profile: Public bus rollover, school bus collision, high-speed multi-car pile-up (> 5 vehicles), hazardous fuel spills.
+- Dispatch: Mobile Command Post, 5+ ALS Ambulances, 2 Heavy Rescue Trucks, 2 Fire Engines with foam capability, 50-ton hydraulic recovery cranes, Hospital MCI Triage Team.
+- Action: Full highway closure, START triage sectorization, helicopter medevac staging if transit distance > 25 km.
+
+Level 4: Hazardous Cargo / Tanker Collision
+- Profile: Petroleum road tanker, compressed gas tube trailer, or corrosive chemical transport involvement.
+- Dispatch: Combined HAZMAT + Heavy Rescue + Fire Battalion + Environmental Protection Agency.
+- Action: 800m initial downwind safety perimeter; foam blanket application over fuel spill; ignition source suppression.
+
+3. START TRIAGE METHODOLOGY (SIMPLE TRIAGE AND RAPID TREATMENT)
+All on-scene paramedics and first-arriving officers must evaluate patients within 30 seconds using the RPM assessment (Respiration, Perfusion, Mental Status):
+
+- RED (Immediate / Priority 1):
+  * Respiration rate > 30 breaths/min or < 10 breaths/min.
+  * Absent radial pulse or capillary refill time > 2 seconds (indicates severe shock/hemorrhage).
+  * Unable to follow simple verbal commands / altered consciousness.
+  * Action: Immediate stabilization and priority transport to Level 1 Trauma Center.
+
+- YELLOW (Delayed / Priority 2):
+  * Serious injuries (compound fractures, blunt abdominal trauma, stable spinal injury) with normal respiration and perfusion.
+  * Can follow commands; stable hemodynamics.
+  * Action: Secondary transport after Red tier clearance.
+
+- GREEN (Minor / Walking Wounded / Priority 3):
+  * Ambulatory patients with minor lacerations, soft tissue injuries, or contusions.
+  * Action: Direct to designated secondary treatment collection tent.
+
+- BLACK (Expectant / Deceased / Priority 0):
+  * Apneic after manual airway repositioning; catastrophic injuries incompatible with life.
+  * Action: Cover, preserve position for forensic accident reconstruction, prioritize living patients.
+
+4. VEHICLE EXTRICATION & TECHNICAL RESCUE (JAWS OF LIFE)
+1. Scene & Vehicle Stabilization:
+   - Apply wheel chocks, step chocks, and hydraulic stabilization struts before patient contact.
+   - Disable 12V and high-voltage (EV) electrical circuits to prevent unexpected airbag deployment or high-voltage arc flash.
+2. Glass Management:
+   - Control laminated windshield glass using glass cutters; tape tempered side glass before mechanical punch disruption to protect victims.
+3. Hydraulic Operations:
+   - Door Bending/Removal: Spreaders applied at latch mechanism; cutters applied to hinges.
+   - Roof Flap / Roof Removal: Cut A, B, and C pillars sequentially; cover exposed metal edges with heavy canvas protection blankets.
+   - Dash Displacement / Dash Roll: Hydraulic rams positioned against base of B-pillar and lower A-pillar hinge to lift collapsed dashboard off pinned lower extremities.
+
+5. HIGHWAY SAFETY & SECONDARY CRASH MITIGATION
+- Advance Warning Signage:
+  * Deploy automated radar-equipped smart warning trailers 500 meters and 250 meters upstream.
+  * Variable Message Signs (VMS) update within 60 seconds with lane blockage advisory.
+- Traffic Attenuator Vehicles:
+  * Position heavy truck-mounted attenuators (TMA) in a blocking angle (15-20 degrees) upstream of the rescue work zone to shield emergency personnel.
+- Drone Situational Monitoring:
+  * Autonomous drone dispatch for overhead traffic flow analysis and tailback queue detection.
+
+6. LIQUID SPILLAGE & IGNITION SUPPRESSION
+- Hydrocarbon fuel leak containment:
+  * Apply non-combustible absorbent granules (bentonite/vermiculite).
+  * Deploy drain seals / pneumatic sewer plugs over storm drains within 50 meters of collision.
+  * Lay ready 1.75-inch foam hose line charged with 3% AFFF foam concentrate.
+================================================================================

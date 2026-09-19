@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Center | ResQ-AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
+        .stat-card { background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 20px; backdrop-filter: blur(10px); }
+        .stat-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .stat-val { font-size: 1.8rem; font-weight: 700; line-height: 1.2; }
+        .stat-label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        .controls { display: flex; gap: 15px; margin-bottom: 20px; }
+        .search-box { position: relative; flex: 1; max-width: 400px; }
+        .search-box i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+        .search-box input { width: 100%; padding: 12px 15px 12px 40px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 8px; color: #fff; font-family: inherit; }
+        .search-box input:focus { outline: none; border-color: var(--primary); }
+        
+        .empty-state { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
+        .empty-state i { font-size: 3rem; margin-bottom: 15px; opacity: 0.5; }
+    </style>
+</head>
+<body>
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <resq-navbar status="LIVE FEED"></resq-navbar>
+
+    <main class="main-content">
+        <div class="container fade-in">
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(59, 130, 246, 0.1); color: var(--primary);"><i data-lucide="activity"></i></div>
+                    <div>
+                        <div class="stat-val" id="statTotal">0</div>
+                        <div class="stat-label">Total Active</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(239, 68, 68, 0.1); color: var(--critical);"><i data-lucide="alert-octagon"></i></div>
+                    <div>
+                        <div class="stat-val" id="statCritical" style="color: var(--critical)">0</div>
+                        <div class="stat-label">Critical / P1</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(234, 179, 8, 0.1); color: var(--medium);"><i data-lucide="user-check"></i></div>
+                    <div>
+                        <div class="stat-val" id="statPending" style="color: var(--medium)">0</div>
+                        <div class="stat-label">Pending Verification</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(139, 92, 246, 0.1); color: var(--accent);"><i data-lucide="bot"></i></div>
+                    <div>
+                        <div class="stat-val">99%</div>
+                        <div class="stat-label">AI Triage Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card fade-in delay-1" style="padding: 24px;">
+                <h3 style="margin-bottom: 20px; font-weight: 500; font-size: 1.1rem; color: var(--text-secondary);"><i data-lucide="bar-chart-2"></i> Analytics Overview</h3>
+                <div class="grid-2 mb-40">
+                    <div class="chart-container" style="position: relative; height:250px; width:100%">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                    <div class="chart-container" style="position: relative; height:250px; width:100%">
+                        <canvas id="severityChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="search-box">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="searchInput" placeholder="Search by ID, Location, or Category...">
+                    </div>
+                    <select id="filterStatus" class="form-control" style="width: 200px;">
+                        <option value="">All Statuses</option>
+                        <option value="Pending Verification">Pending Verification</option>
+                        <option value="Verified">Verified</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Resolved">Resolved</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>INCIDENT ID</th>
+                                <th>CATEGORY</th>
+                                <th>LOCATION</th>
+                                <th>SEVERITY</th>
+                                <th>STATUS</th>
+                                <th>TIME</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="incidentTableBody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                    <div id="emptyState" class="empty-state" style="display:none;">
+                        <i data-lucide="check-circle-2"></i>
+                        <h3>All Clear</h3>
+                        <p>No incidents match the current filters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

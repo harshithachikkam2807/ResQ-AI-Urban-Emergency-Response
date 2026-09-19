@@ -1,0 +1,69 @@
+================================================================================
+DEMO KNOWLEDGE BASE: URBAN PUBLIC SAFETY, INFRASTRUCTURE HAZARDS & CIVIL PROTECTION
+Document ID: KB-EMERG-PUB-2026-V1
+Classification: Municipal Civil Protection & Homeland Emergency Standard Procedure
+Target Audience: Law Enforcement, Civil Defence, Municipal Engineers, Disaster Authorities
+================================================================================
+
+1. PURPOSE & APPLICABLE DOMAINS
+This guideline establishes the standardized inter-agency response protocol for high-impact urban public safety threats, critical infrastructure failures, massive crowd surges, subterranean gas line ruptures, electrical grid hazards, and structural collapses. The core objective is containment of human peril, structural stabilization, and rapid civil restoration.
+
+2. INFRASTRUCTURE HAZARD TAXONOMY & THREAT TIERS
+--------------------------------------------------------------------------------
+Category A: Structural Failure & Ground Subsidences
+- Manifestations: Building structural collapse, flyover/bridge cantilever cracking, roadway sinkhole opening, retaining wall failure.
+- Severity:
+  * Minor: Superficial masonry detachment, road subsidence < 0.5m.
+  * Major: Structural load-bearing member deflection, progressive pancake collapse, sinkhole > 2m depth swallowing vehicles.
+- Response: Immediate 150m perimeter evacuation; deployment of Urban Search & Rescue (USAR) collapse team; structural engineering sonar scanning.
+
+Category B: Gas Distribution & Subterranean Pipeline Rupture
+- Manifestations: Compressed Natural Gas (CNG), Piped Natural Gas (PNG), or Liquefied Petroleum Gas (LPG) line puncture during excavation.
+- Severity:
+  * Alert: Lower Explosive Limit (LEL) detector reads 10% - 20% in ambient air.
+  * Critical Alarm: LEL > 20% or active open ignited jet fire.
+- Response: Immediate electrical grid de-energization; ban all open flames, internal combustion engines, and wireless radio transmission within 300m; initiate emergency city gas valve shutoff.
+
+Category C: High-Voltage Electrical Grid & Substation Hazards
+- Manifestations: Overhead 66kV/220kV power transmission line snap, transformer oil explosion, street pole step-potential hazard.
+- Response: Maintain strict 10m clearance from downed conductors; initiate remote circuit breaker trip via SCADA; treat all wet surfaces as energized until confirmed grounded.
+
+Category D: High-Density Crowd Surge & Transit Chokepoint Panic
+- Manifestations: Rail terminal crushes, stadium gate failures, religious or political assembly bottlenecking (> 4 persons/m²).
+- Response: Open emergency relief egress corridors; broadcast calming public address announcements; deploy mounted and bicycle quick-reaction units; reverse escalator directions to halt incoming passenger influx.
+
+3. SCENE ZONING & PERIMETER CONTROL
+First-arriving civil units must establish three concentric control perimeters:
+- HOT ZONE (Inner Exclusion Perimeter - Red):
+  * Strictly reserved for certified USAR technicians, HAZMAT specialists, and tactical response teams with Level A/B protective gear.
+  * Entry/Exit recorded via single access control point with breathing apparatus accountability officer.
+- WARM ZONE (Contamination Reduction & Support Zone - Yellow):
+  * Location for victim decontamination showers, technical rescue tool staging, and patient extraction lanes.
+  * Minimum distance: 100m to 300m depending on explosive/chemical risk.
+- COLD ZONE (Command & Public Safety Zone - Green):
+  * Location for Incident Command Post (ICP), EMS Triage Field Hospital, Staging Area for relief apparatus, and Media briefing perimeter.
+
+4. URBAN SEARCH & RESCUE (USAR) COLLAPSE PROTOCOLS
+1. Call-Out & Listening Search:
+   - Institute 5-minute absolute silence cycles across the disaster zone.
+   - Utilize seismic acoustic geophones and ultra-sensitive listening probes inserted into rubble voids.
+2. Search K-9 & Robotic Probes:
+   - Deploy FEMA/INSARAG certified disaster search canines to mark live scent signals.
+   - Insert 360-degree fiber-optic snake cameras and thermal micro-drones into collapsed crawl spaces.
+3. Shoring & Void Stabilization:
+   - Install pneumatic Paratech struts and wooden box cribbing prior to structural penetration.
+   - Prohibit heavy excavators on collapse heaps until all confirmed void spaces are checked for survivors.
+
+5. UNIFIED INCIDENT COMMAND SYSTEM (ICS) ROLES
+- Incident Commander (IC): Assumes overall operational command; liaises with Municipal Commissioner and Mayor.
+- Operations Section Chief: Directs tactical operations (Police, Fire, USAR, EMS, Engineering teams).
+- Planning Section Chief: Tracks incident status, evaluates GIS building blueprints, and generates incident action plans.
+- Logistics Section Chief: Provides food, water, heavy fuel, replacement SCBA cylinders, and shelter provisions.
+- Safety Officer: Authorized to immediately halt any unsafe operation posing imminent peril to rescue responders.
+- Public Information Officer (PIO): Sole authority for issuing verified statements, casualty counts, and evacuation notices to press.
+
+6. PUBLIC WARNING & EMERGENCY MASS BROADCASTING
+- Cell Broadcast Alert: AI triggers geo-fenced Wireless Emergency Alert (WEA) to all cellular towers within affected zip codes.
+- Digital Signage & Sirens: Urban highway electronic signs display detour alerts; city alarm sirens sounded with 3-minute continuous tone for evacuation.
+- Anti-Panic Messaging: All public broadcasts must use simple, authoritative, actionable guidance (e.g., "Move calmly west toward Park Avenue. Do not enter metro station.").
+================================================================================

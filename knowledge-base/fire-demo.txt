@@ -1,0 +1,71 @@
+================================================================================
+DEMO KNOWLEDGE BASE: URBAN FIRE EMERGENCY CONTAINMENT & RESCUE PROTOCOLS
+Document ID: KB-EMERG-FIR-2026-V1
+Classification: Municipal Fire & Emergency Services Standard Operating Guideline
+Target Audience: Dispatch Officers, Fire Captains, Battalion Chiefs, Paramedics
+================================================================================
+
+1. OPERATIONAL SCOPE & OBJECTIVES
+These protocols govern the tactical response to urban fire incidents ranging from residential and commercial structures to hazardous chemical conflagrations and high-rise emergencies. The priority order is: (1) Life Safety & Rescue, (2) Fire Containment & Property Conservation, (3) Environmental & Structural Protection.
+
+2. ALARM SEVERITY & RESPONSE TIERS
+--------------------------------------------------------------------------------
+Tier 1: Minor / Single Unit Incident (1st Alarm)
+- Scope: Small kitchen fires, vehicular fires, electrical meter box sparks, contained trash fires.
+- Deployment: 1 Standard Pumper Engine (1000 GPM), 1 Quick Response Vehicle (QRV), 4-6 Firefighters.
+- Strategy: Direct offensive hose line attack; thermal imaging scan for wall/ceiling extension.
+
+Tier 2: Structure Fire / Commercial Medium Risk (2nd Alarm)
+- Scope: Multi-room residential dwelling, commercial storefront, school/office compartment fire.
+- Deployment: 3 Pumper Engines, 1 Heavy Water Bowsers (12,000L), 1 Hydraulic Aerial Ladder (32m), 1 Command Van, 2 Advanced Life Support (ALS) Ambulances.
+- Strategy: Simultaneous interior search & rescue, 360-degree size-up, horizontal/vertical ventilation, exposure protection.
+
+Tier 3: High-Rise / Industrial / HAZMAT Conflagration (3rd Alarm)
+- Scope: High-rise building (> 24 meters), shopping malls, industrial warehouses, chemical storage units.
+- Deployment: 6 Pumper Engines, 2 Aerial Ladder Platforms (54m/70m Bronto Skylift), 2 Foam Crash Tenders, 1 Breathing Apparatus (BA) Support Van, 4 ALS Ambulances, HAZMAT Technical Response Unit.
+- Strategy: Staged high-rise attack, standpipe manifold connections, lobby control, stairwell pressurization, secondary search team establishment.
+
+Tier 4: Catastrophic / Multi-Block Disaster (4th Alarm / City Emergency)
+- Scope: Petrochemical facility explosion, dense urban slum conflagration, multi-building fire storm.
+- Deployment: Full quadrant fire battalion mobilization, mutual aid from industrial airport fire brigades, military foam units, mass casualty incident (MCI) triage units.
+
+3. RAPID TRIAGE & SIZE-UP SEQUENCE (AI-ASSISTED)
+1. Building Construction Profile:
+   - Identify Type I (Fire Resistive) to Type V (Wood Frame) from municipal building database.
+   - Flag presence of solar photovoltaic arrays, lightweight truss roofs, and basement storage.
+2. Smoke Analysis via Computer Vision / Sensors:
+   - Smoke Color: White/Grey (Moisture/early stage), Dark Black/Brown (Hydrocarbon/petroleum/heavy fuel loading, flashover imminent), Yellowish-Green (Sulfur/chemical toxins).
+   - Smoke Velocity & Turbulence: High velocity, turbulent smoke indicates impending flashover or backdraft.
+3. Thermal Core Mapping:
+   - Ingest drone FLIR (Forward-Looking Infrared) telemetry to locate fire origin and heat venting corridors.
+
+4. HIGH-RISE OPERATIONAL PROTOCOLS (STRUCTURES > 24m)
+- Elevator Operations:
+  * Automatic activation of Phase I Emergency Elevator Recall to Ground Lobby.
+  * Phase II In-Car Emergency Service restricted strictly to firefighter transport up to 2 floors below the staging floor.
+  * Never operate elevators directly to or above the reported fire floor.
+- Staging Area:
+  * Established 2 floors below the lowest reported fire floor.
+  * Serves as local equipment cache (extra SCBA cylinders, forcible entry tools, spare hose packs, medical trauma kits).
+- Ventilation & Smoke Containment:
+  * Stairwell pressurization fans initiated immediately to keep evacuation stairways free of toxic smoke.
+  * Roof access hatch opened only under direct order of the Incident Commander for vertical venting.
+
+5. HAZARDOUS MATERIALS (HAZMAT) INTERVENTION RULES
+- Maintain 300-meter minimum upwind/crosswind safety perimeter until material is identified.
+- Cross-reference placard UN numbers with the Emergency Response Guidebook (ERG).
+- Chemical / Electrical Fire Extinguishment Agents:
+  * Class B (Flammable Liquids): Aqueous Film-Forming Foam (AFFF) or Alcohol-Resistant AFFF (AR-AFFF).
+  * Class C (Energized Electrical): Dry Chemical Powder (DCP) or Carbon Dioxide (CO2); water fog only after verified grid isolation.
+  * Class D (Combustible Metals): Dry powder flux (Class D extinguishers only); strictly prohibit water contact.
+
+6. MASS CASUALTY & BURN TRIAGE CRITERIA
+- Severe Burn Protocol (Rule of Nines > 20% TBSA or airway burns): Priority 1 (Red) - Direct air/ground transport to designated regional Burn Trauma Center.
+- Carbon Monoxide / Cyanide Smoke Inhalation: Administer 100% high-flow oxygen via non-rebreather mask; mobilize Cyanokit (Hydroxocobalamin) antidote for unresponsive patients.
+- Rapid START Triage staging at the Cold Zone boundary.
+
+7. SAFETY PRACTICES & RAPID INTERVENTION TEAMS (RIT)
+- A 2-in/2-out crew rule is mandatory before interior structural entry.
+- A dedicated Rapid Intervention Team (RIT) must be on standby at the primary entry point for firefighter distress calls (MAYDAY).
+- Personal Alert Safety System (PASS) device monitoring enabled continuously.
+================================================================================

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Governance | ResQ-AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <resq-navbar status="AI GOVERNANCE"></resq-navbar>
+
+    <main class="main-content">
+        <div class="container fade-in" style="max-width: 900px;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h1 class="hero-title" style="font-size: 3rem;">AI <span class="text-gradient">Governance</span></h1>
+                <p class="hero-subtitle" style="margin: 0 auto;">Ethical framework for life-critical automated systems.</p>
+            </div>
+
+            <div class="glass-card mb-40" style="text-align: center; padding: 40px;">
+                <h3 style="color: var(--primary); margin-bottom: 20px;">The Human-in-the-Loop Imperative</h3>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; font-weight: 600;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 15px 30px; border-radius: 8px; border: 1px solid var(--glass-border);">Granite AI Analysis</div>
+                    <i data-lucide="arrow-right" style="color: var(--text-muted);"></i>
+                    <div style="background: rgba(234, 179, 8, 0.1); padding: 15px 30px; border-radius: 8px; border: 1px solid rgba(234, 179, 8, 0.3); color: var(--medium);">Human Verification</div>
+                    <i data-lucide="arrow-right" style="color: var(--text-muted);"></i>
+                    <div style="background: rgba(59, 130, 246, 0.1); padding: 15px 30px; border-radius: 8px; border: 1px solid rgba(59, 130, 246, 0.3); color: var(--primary);">Unit Dispatch</div>
+                </div>
+                <p style="margin-top: 20px; color: var(--text-secondary); font-size: 0.95rem;">ResQ-AI generates recommendations, classifications, and summaries. It does NOT make autonomous critical decisions. Every AI-generated assessment must be reviewed and authorized by a human dispatcher.</p>
+            </div>
+
+            <div class="grid-2 mt-40">
+                <div class="glass-card fade-in delay-1">
+                    <i data-lucide="scale" style="width: 32px; height: 32px; color: var(--accent); margin-bottom: 15px;"></i>
+                    <h3 style="margin-bottom: 10px;">Fairness & Bias Mitigation</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">The system is audited to process reports uniformly regardless of geographic location or language. We acknowledge digital divide biases in crowdsourced reporting; human operators are trained to allocate resources equitably despite data sparsity in lower-income sectors.</p>
+                </div>
+                
+                <div class="glass-card fade-in delay-1">
+                    <i data-lucide="eye" style="width: 32px; height: 32px; color: var(--primary); margin-bottom: 15px;"></i>
+                    <h3 style="margin-bottom: 10px;">Transparency & Explainability</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">AI decisions are strictly accompanied by a readable explanation. The RAG module explicitly cites its exact sources (e.g., HAZMAT ERG pages) for emergency guidance, eliminating opaque "black-box" directives.</p>
+                </div>
+                
+                <div class="glass-card fade-in delay-2">
+                    <i data-lucide="lock" style="width: 32px; height: 32px; color: var(--low); margin-bottom: 15px;"></i>
+                    <h3 style="margin-bottom: 10px;">Privacy & Security</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">User location data is captured exclusively with active consent during reporting. Media uploads are processed securely in memory and flushed. Personal identifiable information (PII) is automatically redacted during AI entity extraction.</p>
+                </div>
+
+                <div class="glass-card fade-in delay-2">
+                    <i data-lucide="shield-alert" style="width: 32px; height: 32px; color: var(--critical); margin-bottom: 15px;"></i>
+                    <h3 style="margin-bottom: 10px;">Hallucination Defense</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Using strict prompt templates and IBM Granite Guardian capabilities, the AI is explicitly instructed to refuse out-of-domain medical diagnoses and to output "Unknown" when incident data is insufficient, preventing dangerous fabricated advice.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/navbar.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
